@@ -7,6 +7,8 @@ public class IPServiceImpl implements IPService{
 	
 	private BlockingQueue<Integer> available   = null;
 	private BlockingQueue<Integer> assigned   = null;
+	//IP Adress Range Starts from 1 to NUMBER_IP_ADRESSES
+	private int NUMBER_IP_ADRESSES = 500;
 	
 	public IPServiceImpl(){
 		available   = new LinkedBlockingQueue<>();
@@ -40,7 +42,6 @@ public class IPServiceImpl implements IPService{
 						System.out.println("IP address Released -> "+temp);
 						available.add(temp);
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 					
@@ -49,7 +50,7 @@ public class IPServiceImpl implements IPService{
 	}
 
 	private void fillAvailableIPAddresses(){
-		for(int i=1;i<=500;i++){
+		for(int i=1;i<=NUMBER_IP_ADRESSES;i++){
 			available.add(i);
 		}
 	}
