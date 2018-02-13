@@ -1,8 +1,11 @@
 # IPService
 IP Service to Assign Dynamic IP's with in range for multiple Request
 
+Main IPService dosen't use any Executor Service instead I used BlockingQueues
 
-Sample Output 500 Ip Addresses Shared among 5000 Requests (Chopped off the output)
+Sample Output 500 Ip Addresses Shared among 30000 Requests executed by 5000 threads(Chopped off the output)
+
+For simulating the Test Scenario I am using Executor Service.
 
 IP address assigned -> 221
 IP address Released -> 183
